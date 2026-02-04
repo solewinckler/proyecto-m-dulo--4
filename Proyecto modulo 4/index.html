@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicación de Consola - Módulo 4</title>
+</head>
+<body>
+
+  <h1>Proyecto Módulo 4 - JavaScript</h1>
+  <p>Abre la consola del navegador para usar la aplicación.</p>
+
+  <script>
+  // Mensaje inicial
+  console.log("Aplicación iniciada correctamente");
+
+  // Objeto usuario
+  let usuario = {
+    nombre: prompt("Ingrese su nombre:"),
+    operacionesRealizadas: []
+  };
+
+  alert("Hola " + usuario.nombre + ", comenzamos");
+
+  // Pedir números
+  let numero1 = Number(prompt("Ingrese el primer número:"));
+  let numero2 = Number(prompt("Ingrese el segundo número:"));
+
+  // Funciones
+  function sumar(a, b) {
+    return a + b;
+  }
+
+  function restar(a, b) {
+    return a - b;
+  }
+
+  function multiplicar(a, b) {
+    return a * b;
+  }
+
+  // Menú
+  let opcion = prompt(
+    "Seleccione una opción:\n" +
+    "1 - Sumar\n" +
+    "2 - Restar\n" +
+    "3 - Multiplicar"
+  );
+
+  let resultado;
+
+  switch (opcion) {
+    case "1":
+      resultado = sumar(numero1, numero2);
+      usuario.operacionesRealizadas.push("Suma: " + resultado);
+      break;
+    case "2":
+      resultado = restar(numero1, numero2);
+      usuario.operacionesRealizadas.push("Resta: " + resultado);
+      break;
+    case "3":
+      resultado = multiplicar(numero1, numero2);
+      usuario.operacionesRealizadas.push("Multiplicación: " + resultado);
+      break;
+    default:
+      console.log("Opción no válida");
+  }
+
+  // Mostrar historial de operaciones
+  console.log("Historial de operaciones de " + usuario.nombre + ":");
+
+  usuario.operacionesRealizadas.forEach(function (operacion) {
+    console.log(operacion);
+  });
+</script>
+
+
+  
+
+</body>
+</html>
